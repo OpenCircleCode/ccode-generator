@@ -1,0 +1,9 @@
+[package]
+name = "circle-code"
+version = "0.1.0"
+authors = ["Quentin de Quelen <quentin@dequelen.me>"]
+
+[[bin]]
+name = "ccode"
+path = "src/main.rs"
+doc = false
