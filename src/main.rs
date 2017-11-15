@@ -1,8 +1,14 @@
+/*
+ * Project: circle-code
+ * File: src/main.rs
+ * Author: Quentin de Quelen (quentin@dequelen.me)
+ */
 
 use std::env;
 
 mod math;
 mod svg;
+mod encoder;
 
 fn main() {
 
@@ -16,7 +22,7 @@ fn main() {
 		return;
 	}
 
-    math::polar_to_cartesian();
-    svg::describe_arc();
+	encoder::encode(&"https://github.com/qdequele/");
+	svg::describe_arc(150_f64, 150_f64, 80_f64, 0_f64, 0_f64);
 
 }

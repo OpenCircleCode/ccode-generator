@@ -7,3 +7,6 @@ authors = ["Quentin de Quelen <quentin@dequelen.me>"]
 name = "ccode"
 path = "src/main.rs"
 doc = false
+
+[dependencies]
+encoding = "0.2.33"
