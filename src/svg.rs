@@ -6,6 +6,12 @@
 
 use math;
 
+pub struct Arc {
+	start: f64,
+	len: f64,
+	level: f64
+}
+
 pub fn describe_arc(x: f64, y: f64, radius: f64, start_angle: f64, end_angle:f64) {
 	let start: math::CartesianCoord= math::polar_to_cartesian(x, y, radius, end_angle);
 	let end: math::CartesianCoord = math::polar_to_cartesian(x, y, radius, start_angle);
@@ -16,5 +22,9 @@ pub fn describe_arc(x: f64, y: f64, radius: f64, start_angle: f64, end_angle:f64
 	} else {
 		largeArcFlag = "1";
 	}
-	
+}
+
+
+pub fn generate_arc(code: String) -> Vec<Arc> {
+	let len = code.len();
 }

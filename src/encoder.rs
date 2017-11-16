@@ -5,30 +5,23 @@
  */
 
 extern crate encoding;
+extern crate md5;
 
-use self::encoding::{Encoding, EncoderTrap, DecoderTrap};
-use self::encoding::all::ISO_8859_1;
 use std::str;
+use self::encoding::{Encoding, EncoderTrap};
+use self::encoding::all::ISO_8859_1;
 
-pub fn encode(text: &str) -> Vec<u8>{
+pub fn code(text: &str) -> String {
 
 	let mut bytes = Vec::new();
-	let mut chars = String::new();
 
-	match ISO_8859_1.encode_to(text, EncoderTrap::Ignore, &mut bytes) {
+	match ISO_8859_1.encode_to(&text, EncoderTrap::Ignore, &mut bytes) {
 		Ok(_) => {},
 		Err(e) => println!("{}", e)
 	}
-	for bit in bytes.clone() {
-		println!("{:08b}", bit);
-	}
-	print_line(bytes.clone());
-	return bytes
-}
 
-pub fn print_line(vec: Vec<u8>) {
-	for bit in vec {
-		let dash = str::replace(&str::replace(&format!("{:08b}", bit), "0", " "), "1", "-");
-		print!("{}", dash);
-	}
+	let md5_text = md5::compute(bytes.clone());
+
+	let encoded_string: Vec<String> = md5_text.into_iter().map(|s| format!("{:08b}", s)).collect();
+	return encoded_string.join("")
 }

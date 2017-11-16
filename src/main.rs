@@ -6,8 +6,8 @@
 
 use std::env;
 
-mod math;
-mod svg;
+// mod math;
+// mod svg;
 mod encoder;
 
 fn main() {
@@ -22,7 +22,9 @@ fn main() {
 		return;
 	}
 
-	encoder::encode(&"https://github.com/qdequele/");
-	svg::describe_arc(150_f64, 150_f64, 80_f64, 0_f64, 0_f64);
+	let coded_string = encoder::code(&args[1]);
+	println!("{}", coded_string);
+
+	// svg::describe_arc(150_f64, 150_f64, 80_f64, 0_f64, 0_f64);
 
 }

@@ -10,3 +10,6 @@ doc = false
 
 [dependencies]
 encoding = "0.2.33"
+base64 = "~0.6.0"
+flate2 = { version = "0.2", features = ["zlib"], default-features = false }
+md5 = "0.3.6"
