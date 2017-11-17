@@ -7,8 +7,8 @@
 use std::f64;
 
 pub struct CartesianCoord {
-	x: f64,
-	y: f64
+	pub x: f64,
+	pub y: f64
 }
 
 pub fn polar_to_cartesian(center_x: f64, center_y: f64, radius: f64, angle: f64) -> CartesianCoord {
@@ -19,3 +19,4 @@ pub fn polar_to_cartesian(center_x: f64, center_y: f64, radius: f64, angle: f64)
 		y: center_y + (radius * angle_radians.sin())
 	}
 }
+
