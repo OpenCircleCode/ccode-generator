@@ -25,4 +25,3 @@ pub fn code(text: &str) -> String {
 	let encoded_string: Vec<String> = md5_text.into_iter().map(|s| format!("{:08b}", s)).collect();
 	return encoded_string.join("")
 }
-

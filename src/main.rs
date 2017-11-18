@@ -24,7 +24,7 @@ fn main() {
 
 
 	let coded_string = encoder::code(&args[1]);
-	let arcs: Vec<svg::Arc> = svg::generate_arcs(coded_string);
-	// svg::describe_arc(150_f64, 150_f64, 80_f64, 0_f64, 0_f64);
+	let arcs: Vec<svg::Arc> = svg::calculate_arcs(coded_string);
+	svg::generate_svg(arcs, &"https://cdn.intra.42.fr/users/medium_qdequele.jpg", &"", &"#0084ff");
 
 }
