@@ -15,9 +15,13 @@ use std::path::Path;
 use std::string::*;
 use std::fmt;
 
-static DATA_FILE	: &'static str = "data.svg";
-static NB_POINTS	: u32 = 36;
-static IMAGE_SIZE	: &'static str = "400";
+static DATA_FILE		: &'static str = "data.svg";
+static NB_POINTS		: u32 = 36;
+static IMAGE_SIZE		: f64 = 400.0;
+static CIRCLE_RAY		: f64 = 180.0;
+static STROKE_WIDTH		: u64 = 6;
+static ANCHOR_BORDER	: u64 = 4;
+static CIRCLE_PADDING	: f64 = 12.0;
 
 #[derive(Debug, Default)]
 struct SvgParam (String);
@@ -155,25 +159,26 @@ fn save_svf_file(paths: Vec<String>) {
 	
 }
 
-pub fn generate_svg(arcs: Vec<Arc>, image_url: &str, logo_url: &str, color: &str) {
+pub fn generate_svg(arcs: Vec<Arc>, image_url: &str, _logo_url: &str, color: &str) {
 
 	let mut svg: Vec<String> = Vec::new();
-	let color: SvgParam = SvgParam::new(color);
-	let stroke_width: SvgParam = SvgParam::from_int(4);
-	let url_image: SvgParam = SvgParam::new(image_url);
+	let color = SvgParam::new(color);
+	let stroke_width = SvgParam::from_int(STROKE_WIDTH);
 
-	svg.push(format!("<svg width=\"{0}px\" height=\"{0}px\" viewBox=\"0 0 {0} {0}\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n", IMAGE_SIZE));
+	svg.push(format!("<svg width=\"{0}px\" height=\"{0}px\" viewBox=\"0 0 {0} {0}\" viewport-fill=\"red\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n", IMAGE_SIZE));
 	svg.push(format!("\t<g id=\"first_line\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">\n"));
-	svg.push(format!("\t<clipPath id=\"clipCircle\">\n"));
-	svg.push(format!("\t\t<circle r=\"48\" cx=\"150\" cy=\"150\"/>\n"));
-	svg.push(format!("\t</clipPath>\n"));
+	
+	svg.push(svg_avatar(image_url).to_string());
 
-	svg.push(format!("\t<image xlink:href={url_image} x=\"75\" y=\"75\" height=\"150px\" width=\"150px\" clip-path=\"url(#clipCircle)\"/>\n", url_image = url_image));
-
-	svg.push(svg_anchor(&color, &stroke_width, SvgParam::from_float(6.91133005), SvgParam::from_float(106.674877)).to_string());
-	svg.push(svg_anchor(&color, &stroke_width, SvgParam::from_float(111.482759), SvgParam::from_float(6.91133005)).to_string());
-	svg.push(svg_anchor(&color, &stroke_width, SvgParam::from_float(114.487685), SvgParam::from_float(214.852217)).to_string());
-	svg.push(svg_anchor(&color, &stroke_width, SvgParam::from_float(214.852217), SvgParam::from_float(106.073892)).to_string());
+	let center = SvgParam::from_float(IMAGE_SIZE / 2.0);
+	let offset = IMAGE_SIZE / 2.0 - CIRCLE_RAY + CIRCLE_PADDING * 2.0;
+	let left_offset = SvgParam::from_float(offset);
+	let rifght_offset = SvgParam::from_float(IMAGE_SIZE - offset);
+	
+	svg.push(svg_anchor(&color, &center, &left_offset).to_string());
+	svg.push(svg_anchor(&color, &center, &rifght_offset).to_string());
+	svg.push(svg_anchor(&color, &left_offset, &center).to_string());
+	svg.push(svg_anchor(&color, &rifght_offset, &center).to_string());
 
 	svg.push(svg_arcs(&color, &stroke_width, &(arcs.clone().into_iter().filter(|arc| arc.level == 0).collect())).to_string());
 	svg.push(svg_arcs(&color, &stroke_width, &(arcs.clone().into_iter().filter(|arc| arc.level == 1).collect())).to_string());
@@ -186,12 +191,13 @@ pub fn generate_svg(arcs: Vec<Arc>, image_url: &str, logo_url: &str, color: &str
 	save_svf_file(svg);
 }
 
-fn svg_anchor(color: &SvgParam, stroke_width: &SvgParam, cx: SvgParam, cy: SvgParam) -> SvgGroup {
+fn svg_anchor(color: &SvgParam, cx: &SvgParam, cy: &SvgParam) -> SvgGroup {
 
-	let external_ray: SvgParam = SvgParam::from_int(8);
-	let internal_ray: SvgParam = SvgParam::from_int(1);
+	let external_ray = SvgParam::from_int(8);
+	let internal_ray = SvgParam::from_int(1);
+	let stroke_width = SvgParam::from_int(ANCHOR_BORDER);
 
-	let mut anchor: SvgGroup = SvgGroup::new();
+	let mut anchor = SvgGroup::new();
 
 	anchor.push(format!("\t<circle stroke={color} stroke-width={stroke_width} cx={cx} cy={cy} r={external_ray}></circle>", 
 		color = color, 
@@ -212,15 +218,34 @@ fn svg_anchor(color: &SvgParam, stroke_width: &SvgParam, cx: SvgParam, cy: SvgPa
 }
 
 fn svg_arcs(color: &SvgParam, stroke_width: &SvgParam, arcs: &Vec<Arc>) -> SvgGroup {
-	let mut svg_arcs: SvgGroup = SvgGroup::new();
+	let mut svg_arcs = SvgGroup::new();
 	
 	let angle = 360 / NB_POINTS;
 	
 	for arc in arcs.clone() {
-		let d = describe_arc(150_f64, 150_f64, 80_f64 - (8_f64 * arc.level as f64), (arc.start * angle) as f64, ((arc.start + arc.len) * angle) as f64);
+		let d = describe_arc((IMAGE_SIZE / 2.0), (IMAGE_SIZE / 2.0), CIRCLE_RAY - (CIRCLE_PADDING * arc.level as f64), (arc.start * angle) as f64, ((arc.start + arc.len) * angle) as f64);
 		let path = format!("\t<path stroke-linecap=\"round\" fill=\"none\" stroke={color} stroke-width={stroke_width} d={d}></path>", d = d, color = color, stroke_width = stroke_width);
 		svg_arcs.push(path.clone());
 	}
 
 	svg_arcs
+}
+
+fn svg_avatar(image_url: &str) -> SvgGroup {
+	let mut svg_avatar = SvgGroup::new();
+	
+	let url_image = SvgParam::new(image_url);
+	let c = SvgParam::from_float((IMAGE_SIZE / 2.0));
+
+	let clip_size = SvgParam::from_float(CIRCLE_RAY - (4.0 * CIRCLE_PADDING));
+	let image_size = SvgParam::from_float((CIRCLE_RAY - CIRCLE_PADDING) * 2.0);
+	let image_padding = SvgParam::from_float((IMAGE_SIZE - (CIRCLE_RAY - CIRCLE_PADDING) * 2.0) / 2.0);
+
+	svg_avatar.push("\t<clipPath id=\"clipCircle\">".to_string());
+	svg_avatar.push(format!("\t\t<circle r={r} cx={cx} cy={cy}/>", r = clip_size, cx= c, cy = c));
+	svg_avatar.push("\t</clipPath>".to_string());
+
+	svg_avatar.push(format!("\t<image xlink:href={url_image} x={image_padding} y={image_padding} height={image_size} width={image_size} clip-path=\"url(#clipCircle)\"/>", url_image = url_image, image_size = image_size, image_padding =  image_padding));
+	
+	svg_avatar
 }
