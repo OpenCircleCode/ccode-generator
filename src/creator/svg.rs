@@ -161,9 +161,6 @@ pub fn generate_svg(arcs: Vec<Arc>, image_url: &str, logo_url: &str, color: &str
 	let color: SvgParam = SvgParam::new(color);
 	let stroke_width: SvgParam = SvgParam::from_int(4);
 	let url_image: SvgParam = SvgParam::new(image_url);
-	
-
-
 
 	svg.push(format!("<svg width=\"{0}px\" height=\"{0}px\" viewBox=\"0 0 {0} {0}\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n", IMAGE_SIZE));
 	svg.push(format!("\t<g id=\"first_line\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">\n"));
@@ -173,18 +170,18 @@ pub fn generate_svg(arcs: Vec<Arc>, image_url: &str, logo_url: &str, color: &str
 
 	svg.push(format!("\t<image xlink:href={url_image} x=\"75\" y=\"75\" height=\"150px\" width=\"150px\" clip-path=\"url(#clipCircle)\"/>\n", url_image = url_image));
 
-	svg.push(format!("{}", svg_anchor(&color, &stroke_width, SvgParam::from_float(6.91133005), SvgParam::from_float(106.674877))));
-	svg.push(format!("{}", svg_anchor(&color, &stroke_width, SvgParam::from_float(111.482759), SvgParam::from_float(6.91133005))));
-	svg.push(format!("{}", svg_anchor(&color, &stroke_width, SvgParam::from_float(114.487685), SvgParam::from_float(214.852217))));
-	svg.push(format!("{}", svg_anchor(&color, &stroke_width, SvgParam::from_float(214.852217), SvgParam::from_float(106.073892))));
+	svg.push(svg_anchor(&color, &stroke_width, SvgParam::from_float(6.91133005), SvgParam::from_float(106.674877)).to_string());
+	svg.push(svg_anchor(&color, &stroke_width, SvgParam::from_float(111.482759), SvgParam::from_float(6.91133005)).to_string());
+	svg.push(svg_anchor(&color, &stroke_width, SvgParam::from_float(114.487685), SvgParam::from_float(214.852217)).to_string());
+	svg.push(svg_anchor(&color, &stroke_width, SvgParam::from_float(214.852217), SvgParam::from_float(106.073892)).to_string());
 
-	svg.push(format!("{}", svg_arcs(&color, &stroke_width, &(arcs.clone().into_iter().filter(|arc| arc.level == 0).collect()))));
-	svg.push(format!("{}", svg_arcs(&color, &stroke_width, &(arcs.clone().into_iter().filter(|arc| arc.level == 1).collect()))));
-	svg.push(format!("{}", svg_arcs(&color, &stroke_width, &(arcs.clone().into_iter().filter(|arc| arc.level == 2).collect()))));
-	svg.push(format!("{}", svg_arcs(&color, &stroke_width, &(arcs.clone().into_iter().filter(|arc| arc.level == 3).collect()))));
+	svg.push(svg_arcs(&color, &stroke_width, &(arcs.clone().into_iter().filter(|arc| arc.level == 0).collect())).to_string());
+	svg.push(svg_arcs(&color, &stroke_width, &(arcs.clone().into_iter().filter(|arc| arc.level == 1).collect())).to_string());
+	svg.push(svg_arcs(&color, &stroke_width, &(arcs.clone().into_iter().filter(|arc| arc.level == 2).collect())).to_string());
+	svg.push(svg_arcs(&color, &stroke_width, &(arcs.clone().into_iter().filter(|arc| arc.level == 3).collect())).to_string());
 
-	svg.push(format!("\t</g>\n"));
-	svg.push(format!("</svg>"));
+	svg.push("\t</g>\n".to_string());
+	svg.push("</svg>".to_string());
 
 	save_svf_file(svg);
 }
