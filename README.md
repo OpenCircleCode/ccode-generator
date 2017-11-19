@@ -35,6 +35,7 @@ Image size : 400px
 Number of circle : 4
 
 Number of point by circle : (farest to nearest from the center)
+
 	- 1 : 36
 	- 2 : 36
 	- 3 : 24
@@ -43,6 +44,7 @@ Number of point by circle : (farest to nearest from the center)
 Circle margin : 16px
 
 Circle ray : (farest to nearest from the center)
+
 	- 1 : 180px
 	- 2 : 164px
 	- 3 : 148px
