@@ -102,7 +102,20 @@ pub fn calculate_arcs(code: String) -> Vec<Arc> {
 	let mut level:u32 = 0;
 
 	for c in code.chars() {
-		if level == 1 || level == 2 {
+		if level == 2 && start == 0{
+			start = 1;
+		}
+		if start + len >= NB_POINTS - 1 {
+			arcs.push(Arc{
+				start: start,
+				len: len,
+				level: level
+			});
+			start = 0;
+			len = 0;
+			level +=1;
+		}
+		if level == 2 {
 			if (start + len) % 9 == (NB_POINTS / 4) - 1 {
 				if len != 0 {
 					arcs.push(Arc{
@@ -114,16 +127,6 @@ pub fn calculate_arcs(code: String) -> Vec<Arc> {
 				start += len + 2;
 				len = 0;
 			}
-		}
-		if start + len >= NB_POINTS - 1 {
-			arcs.push(Arc{
-				start: start,
-				len: len,
-				level: level
-			});
-			start = 0;
-			len = 0;
-			level +=1;
 		}
 		if c == '0' {
 			if len != 0 {
@@ -234,7 +237,7 @@ fn svg_arcs(color: &SvgParam, stroke_width: &SvgParam, arcs: &Vec<Arc>) -> SvgGr
 	let mut svg_arcs = SvgGroup::new();
 	
 	let angle = 360 / NB_POINTS;
-	
+
 	for arc in arcs.clone() {
 		let d = describe_arc((IMAGE_SIZE / 2.0), (IMAGE_SIZE / 2.0), CIRCLE_RAY - (CIRCLE_PADDING * arc.level as f64), (arc.start * angle) as f64, ((arc.start + arc.len) * angle) as f64);
 		let path = format!("\t<path stroke-linecap=\"round\" fill=\"none\" stroke={color} stroke-width={stroke_width} d={d}></path>", d = d, color = color, stroke_width = stroke_width);

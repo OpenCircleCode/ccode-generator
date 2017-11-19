@@ -52,7 +52,7 @@ Stroke width : 6px
 
 Anchors : 4
     - North
-    - Eat
+    - East
     - South
     - West
 
@@ -63,7 +63,7 @@ Avatar image ray: 116 px
 
 ### Data 
 
-Start reading point : North on circle 1
+Start reading point : East on circle 1
 
 String encoding : ISO_8859_1 (Latin-1)
 
