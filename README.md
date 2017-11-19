@@ -60,6 +60,7 @@ Anchors : 4
 	- West
 
 Anchor external border width : 4 px
+
 Anchor internal border width : 1 px
 
 Avatar image ray: 116 px
