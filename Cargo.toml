@@ -11,3 +11,5 @@ doc = false
 [dependencies]
 encoding = "0.2.33"
 md5 = "0.3.6"
+hyper = "0.11"
+futures = "0.1.14"

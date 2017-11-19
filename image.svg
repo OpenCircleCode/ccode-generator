@@ -4,7 +4,7 @@
 		<clipPath id="clipCircle">
 			<circle r="116" cx="200" cy="200"/>
 		</clipPath>
-		<image xlink:href="https://cdn.intra.42.fr/users/medium_qdequele.jpg" x="36" y="36" height="328" width="328" clip-path="url(#clipCircle)"/>
+		<image xlink:href="https://avatars0.githubusercontent.com/u/6064892?s=460&v=4" x="36" y="36" height="328" width="328" clip-path="url(#clipCircle)"/>
 	</g>
 	<g>
 		<circle stroke="#0084ff" stroke-width="4" cx="200" cy="52" r="8"></circle>
