@@ -15,13 +15,13 @@ use std::path::Path;
 use std::string::*;
 use std::fmt;
 
-static DATA_FILE		: &'static str = "data.svg";
+static DATA_FILE		: &'static str = "image.svg";
 static NB_POINTS		: u32 = 36;
 static IMAGE_SIZE		: f64 = 400.0;
 static CIRCLE_RAY		: f64 = 180.0;
 static STROKE_WIDTH		: u64 = 6;
 static ANCHOR_BORDER	: u64 = 4;
-static CIRCLE_PADDING	: f64 = 12.0;
+static CIRCLE_PADDING	: f64 = 16.0;
 
 #[derive(Debug, Default)]
 struct SvgParam (String);
@@ -102,7 +102,20 @@ pub fn calculate_arcs(code: String) -> Vec<Arc> {
 	let mut level:u32 = 0;
 
 	for c in code.chars() {
-		if start + len == NB_POINTS - 1 {
+		if level == 1 || level == 2 {
+			if (start + len) % 9 == (NB_POINTS / 4) - 1 {
+				if len != 0 {
+					arcs.push(Arc{
+						start: start,
+						len: len,
+						level: level
+					});
+				}
+				start += len + 2;
+				len = 0;
+			}
+		}
+		if start + len >= NB_POINTS - 1 {
 			arcs.push(Arc{
 				start: start,
 				len: len,
@@ -131,7 +144,7 @@ pub fn calculate_arcs(code: String) -> Vec<Arc> {
 	arcs
 }
 
-fn save_svf_file(paths: Vec<String>) {
+fn save_svf_file(datas: Vec<String>) {
 	let path = Path::new(DATA_FILE);
 	let display = path.display();
 
@@ -145,7 +158,7 @@ fn save_svf_file(paths: Vec<String>) {
 		Ok(file) => file,
 	};
 
-	for data in paths {
+	for data in datas {
 		match file.write_all(data.as_bytes()) {
 			Err(why) => {
 				println!("couldn't write to {}: {}",

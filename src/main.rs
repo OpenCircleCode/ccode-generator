@@ -18,10 +18,9 @@ fn main() {
 		println!("Need arguments");
 		return;
 	} else if args.len() > 2 {
-		println!("Too mutch arguments");
+		println!("Too much arguments");
 		return;
 	}
-
 
 	let coded_string = encoder::code(&args[1]);
 	let arcs: Vec<svg::Arc> = svg::calculate_arcs(coded_string);
