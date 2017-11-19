@@ -35,26 +35,27 @@ Image size : 400px
 Number of circle : 4
 
 Number of point by circle : (farest to nearest from the center)
-    - 1 : 36
-    - 2 : 36
-    - 3 : 24
-    - 4 : 36
+	- 1 : 36
+	- 2 : 36
+	- 3 : 24
+	- 4 : 36
 
 Circle margin : 16px
 
 Circle ray : (farest to nearest from the center)
-    - 1 : 180px
-    - 2 : 164px
-    - 3 : 148px
-    - 4 : 132px
+	- 1 : 180px
+	- 2 : 164px
+	- 3 : 148px
+	- 4 : 132px
 
 Stroke width : 6px
 
 Anchors : 4
-    - North
-    - East
-    - South
-    - West
+
+	- North
+	- East
+	- South
+	- West
 
 Anchor external border width : 4 px
 Anchor internal border width : 1 px
