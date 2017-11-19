@@ -10,7 +10,7 @@ extern crate urlencoding;
 mod creator;
 
 use std::env;
-use creator::{encoder, svg, download};
+use creator::{encoder, svg};
 use urlencoding::encode;
 
 fn main() {
