@@ -2,7 +2,7 @@
 
 Reinterpretation of Facebook Messenger profile code. 
 
-![Facebook example](https://raw.githubusercontent.com/OpenCircleCode/occ-generator/master/image.png)
+![example](https://raw.githubusercontent.com/OpenCircleCode/occ-generator/master/image.png)
 
 ## Usage
 
