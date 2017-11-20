@@ -75,6 +75,16 @@ String hash : md5
 
 String max length : 255 chars
 
+## Example
+
+```
+./ccode "http://github.com/qdequele" "https://avatars0.githubusercontent.com/u/6064892?s=460&v=4" "https://avatars2.githubusercontent.com/u/33703450?s=200&v=4" "#0084ff"
+```
+
+md5 : 1ce6a9619781a97cecf9b51550ebcd22
+
+binary : 00011100111001101010100101100001100101111000000110101001011111001110110011111001101101010001010101010000111010111100110100100010
+
 ## Dependances
 
 [lifthrasiir/rust-encoding](https://github.com/lifthrasiir/rust-encoding)
