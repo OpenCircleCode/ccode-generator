@@ -10,7 +10,7 @@ extern crate urlencoding;
 mod creator;
 
 use std::env;
-use creator::{encoder, svg};
+use creator::{encoder, svg, downloader};
 use urlencoding::encode;
 
 fn main() {
@@ -46,5 +46,7 @@ fn main() {
 	let coded_string = encoder::code(&url);
 	let arcs: Vec<svg::Arc> = svg::calculate_arcs(coded_string);
 	svg::generate_svg(arcs, &avatar, &logo, &color);
+
+	downloader::image("http://avatars2.githubusercontent.com/u/33703450?s=200&v=4".to_owned());
 
 }
