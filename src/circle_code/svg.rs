@@ -16,7 +16,7 @@ use std::fmt;
 
 use self::constructor::{Arc, describe_arc};
 
-static NB_POINTS		: u32 = 36;
+pub static NB_POINTS	: u32 = 72;
 static IMAGE_SIZE		: f64 = 400.0;
 static CIRCLE_RAY		: f64 = 180.0;
 static STROKE_WIDTH		: u64 = 6;

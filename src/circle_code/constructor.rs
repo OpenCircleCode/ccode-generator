@@ -1,6 +1,6 @@
 
 use super::math;
-
+use super::svg::{NB_POINTS};
 
 #[derive(Debug, Clone, Copy)]
 pub struct Arc {
@@ -19,50 +19,35 @@ pub fn describe_arc(x: f64, y: f64, radius: f64, start_angle: f64, end_angle:f64
 }
 
 
-pub fn calculate_arcs(_code: &[u32]) -> Vec<Arc> {
-    let mut _arcs: Vec<Arc> = Vec::new();
+pub fn calculate_arcs(code: &[u32]) -> Vec<Arc> {
+    let mut arcs: Vec<Arc> = Vec::new();
 
-    // let mut start: u32 = 0;
-    // let mut len:u32 = 0;
-    // let mut level:u32 = 0;
+    let mut start: u32 = 0;
+    let mut len:u32 = 0;
+    let mut level:u32 = 0;
 
-    // let mut code_s = String::from(code);
-    // let mut last_c = Char::new();
+    for c in code {
+        if start + len >= NB_POINTS {
+            if len != 0 {
+                arcs.push(Arc{ start: start, len: len, level: level });
+            }
+            start = 0;
+            len = 0;
+            level += 1;
+        }
+        if level == 2 && (start + len - 1) % 9 == (NB_POINTS / 4) - 1 {
+            if len != 0 {
+                arcs.push(Arc{ start: start, len: len, level: level });
+            }
+            start += len + 2;
+            len = 0;
+        }
+        if *c == 0 {
+            start += 1;
+        } else if *c == 1 {
+            len += 1;
+        }
+    }
 
-    // for (i, c) in code.chars().enumerate() {
-    //    if start + len - 1 >= NB_POINTS - 1 {
-    //         arcs.push(Arc{ start: start, len: len, level: level });
-    //         len = 1;
-    //         level +=1;
-    //         start = if level == 2 { 1 } else { 0 };
-    //     }
-    //     if level == 2 && (start + len - 1) % 9 == (NB_POINTS / 4) - 1 {
-    //         if len != 0 {
-    //             arcs.push(Arc{ start: start, len: len, level: level });
-    //         }
-    //         start += len + 2;
-    //         len = 0;
-    //     }
-    //     if i + 2 >= code.len() && len != 0 {
-    //         arcs.push(Arc{ start: start, len: len, level: level });
-    //         break
-    //     }
-    //     else if code_c.nth(i).unwrap() == '1' 
-    //         && code_c.nth(i + 1).unwrap() == '0' {
-    //         arcs.push(Arc{ start: start, len: len, level: level });
-    //         start += len;
-    //     }
-    //     if c == '0' {
-    //         start += 1;
-    //     } else if c== '1' {
-    //         len += 1;
-    //     }
-    // }
-
-    // loop {
-        
-    //     i += 1;
-    // }
-
-    _arcs
+    arcs
 }
