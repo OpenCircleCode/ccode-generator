@@ -51,6 +51,6 @@ fn main() {
 	svg::generate_svg(arcs.clone(), &avatar, &logo, &color);
 	svg::generate_svg_test(arcs.clone(), canvas, &avatar, &logo, &color);
 
-	downloader::image("http://avatars2.githubusercontent.com/u/33703450?s=200&v=4".to_owned());
+	downloader::image("https://cdn.intra.42.fr/users/medium_qdequele.jpg".to_owned());
 
 }

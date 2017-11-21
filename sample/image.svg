@@ -4,7 +4,7 @@
 		<clipPath id="clipCircle">
 			<circle r="116" cx="200" cy="200"/>
 		</clipPath>
-		<image xlink:href="https%3A%2F%2Favatars0.githubusercontent.com%2Fu%2F6064892%3Fs%3D460%26v%3D4" x="36" y="36" height="328" width="328" clip-path="url(#clipCircle)"/>
+		<image xlink:href="https://stackoverflow.com/questions/38868105/unable-to-return-a-vector-of-string-slices-borrowed-value-does-not-live-long-en" x="36" y="36" height="328" width="328" clip-path="url(#clipCircle)"/>
 	</g>
 	<g>
 		<circle stroke="#0084ff" stroke-width="4" cx="200" cy="52" r="8"></circle>

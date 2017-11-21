@@ -15,8 +15,8 @@ use std::path::Path;
 use std::string::*;
 use std::fmt;
 
-static DATA_FILE		: &'static str = "image.svg";
-static DATA_TEST_FILE	: &'static str = "image_test.svg";
+static DATA_FILE		: &'static str = "sample/image.svg";
+static DATA_TEST_FILE	: &'static str = "sample/image_test.svg";
 static NB_POINTS		: u32 = 36;
 static IMAGE_SIZE		: f64 = 400.0;
 static CIRCLE_RAY		: f64 = 180.0;
