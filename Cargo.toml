@@ -9,7 +9,8 @@ path = "src/main.rs"
 doc = false
 
 [dependencies]
-encoding = "0.2.33"
 md5 = "0.3.6"
 urlencoding = "1.0.0"
 reqwest = "0.8.1"
+clippy = "*"
+base64 = "0.8.0"
