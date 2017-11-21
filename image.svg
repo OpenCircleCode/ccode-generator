@@ -4,7 +4,7 @@
 		<clipPath id="clipCircle">
 			<circle r="116" cx="200" cy="200"/>
 		</clipPath>
-		<image xlink:href="https://avatars0.githubusercontent.com/u/6064892?s=460%26v=4" x="36" y="36" height="328" width="328" clip-path="url(#clipCircle)"/>
+		<image xlink:href="https%3A%2F%2Favatars0.githubusercontent.com%2Fu%2F6064892%3Fs%3D460%26v%3D4" x="36" y="36" height="328" width="328" clip-path="url(#clipCircle)"/>
 	</g>
 	<g>
 		<circle stroke="#0084ff" stroke-width="4" cx="200" cy="52" r="8"></circle>
@@ -23,6 +23,7 @@
 		<circle stroke="#0084ff" stroke-width="4" cx="348" cy="200" r="1"></circle>
 	</g>
 	<g>
+		<g>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="6" d="M 290 355.88457268119896 A 180 180 0 0 0 355.88457268119896 290"></path>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="6" d="M 138.43637420137964 369.1446717414635 A 180 180 0 0 0 231.25667198004749 377.26539554219744"></path>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="6" d="M 44.11542731880104 290 A 180 180 0 0 0 84.29823025642294 337.88799976141604"></path>
@@ -34,7 +35,8 @@
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="6" d="M 355.8845726811989 109.99999999999991 A 180 180 0 0 0 315.7017697435771 62.11200023858393"></path>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="6" d="M 377.26539554219744 168.74332801995254 A 180 180 0 0 0 377.26539554219744 168.74332801995254"></path>
 	</g>
-	<g>
+
+		<g>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="6" d="M 361.50847149400215 228.47830113737658 A 164 164 0 0 0 364 200"></path>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="6" d="M 282 342.0281662206479 A 164 164 0 0 0 354.109589808889 256.09130350540966"></path>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="6" d="M 74.36871132848762 305.4171679885925 A 164 164 0 0 0 118.00000000000004 342.02816622064796"></path>
@@ -45,7 +47,8 @@
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="6" d="M 325.6312886715124 94.5828320114075 A 164 164 0 0 0 256.0913035054097 45.890410191111044"></path>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="6" d="M 361.50847149400215 171.52169886262342 A 164 164 0 0 0 342.0281662206479 117.99999999999993"></path>
 	</g>
-	<g>
+
+		<g>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="6" d="M 250.618981212199 339.07450787631444 A 148 148 0 0 0 339.07450787631444 250.61898121219897"></path>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="6" d="M 104.8674337663922 313.3745775816088 A 148 148 0 0 0 149.38101878780103 339.07450787631444"></path>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="6" d="M 60.92549212368556 250.618981212199 A 148 148 0 0 0 86.62542241839127 295.13256623360786"></path>
@@ -57,7 +60,8 @@
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="6" d="M 339.07450787631444 149.38101878780105 A 148 148 0 0 0 328.17175976009685 125.99999999999993"></path>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="6" d="M 345.75154744580675 174.3000697052943 A 148 148 0 0 0 345.75154744580675 174.3000697052943"></path>
 	</g>
-	<g>
+
+		<g>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="6" d="M 329.99462339761146 222.9215594520348 A 132 132 0 0 0 332 200"></path>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="6" d="M 222.9215594520348 329.99462339761146 A 132 132 0 0 0 284.8479644786232 301.1178664917051"></path>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="6" d="M 177.07844054796522 329.99462339761146 A 132 132 0 0 0 200 332"></path>
@@ -66,6 +70,8 @@
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="6" d="M 85.68464670045411 134 A 132 132 0 0 0 75.96057405626009 154.85334108101173"></path>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="6" d="M 133.99999999999994 85.68464670045414 A 132 132 0 0 0 115.15203552137677 98.88213350829491"></path>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="6" d="M 222.92155945203476 70.00537660238854 A 132 132 0 0 0 199.99999999999997 68"></path>
+	</g>
+
 	</g>
 	</g>
 </svg>

@@ -16,6 +16,7 @@ use std::string::*;
 use std::fmt;
 
 static DATA_FILE		: &'static str = "image.svg";
+static DATA_TEST_FILE	: &'static str = "image_test.svg";
 static NB_POINTS		: u32 = 36;
 static IMAGE_SIZE		: f64 = 400.0;
 static CIRCLE_RAY		: f64 = 180.0;
@@ -102,15 +103,11 @@ pub fn calculate_arcs(code: String) -> Vec<Arc> {
 	let mut level:u32 = 0;
 
 	for c in code.chars() {
-		if level == 2 && start == 0{
+		if level == 2 && start == 0 {
 			start = 1;
 		}
 		if start + len >= NB_POINTS - 1 {
-			arcs.push(Arc{
-				start: start,
-				len: len,
-				level: level
-			});
+			arcs.push(Arc{ start: start, len: len, level: level });
 			start = 0;
 			len = 0;
 			level +=1;
@@ -118,11 +115,7 @@ pub fn calculate_arcs(code: String) -> Vec<Arc> {
 		if level == 2 {
 			if (start + len) % 9 == (NB_POINTS / 4) - 1 {
 				if len != 0 {
-					arcs.push(Arc{
-						start: start,
-						len: len,
-						level: level
-					});
+					arcs.push(Arc{ start: start, len: len, level: level });
 				}
 				start += len + 2;
 				len = 0;
@@ -130,11 +123,7 @@ pub fn calculate_arcs(code: String) -> Vec<Arc> {
 		}
 		if c == '0' {
 			if len != 0 {
-				arcs.push(Arc{
-					start: start,
-					len: len,
-					level: level
-				});
+				arcs.push(Arc{ start: start, len: len, level: level });
 				start += len;
 				len = 0;
 			}
@@ -147,8 +136,28 @@ pub fn calculate_arcs(code: String) -> Vec<Arc> {
 	arcs
 }
 
-fn save_svf_file(datas: Vec<String>) {
-	let path = Path::new(DATA_FILE);
+pub fn generate_canvas() -> Vec<Arc> {
+	let mut arcs: Vec<Arc> = Vec::new();
+
+	for level in 0..4 {
+		for start in 0..36 {
+			if level == 2 && (start == 0 || start % 9 == 0) {
+				continue
+			} else {
+				arcs.push(Arc{
+					start: start,
+					len: 0,
+					level: level
+				});
+			}
+		}
+	}
+
+	arcs
+}
+
+fn save_svf_file(datas: Vec<String>, filename :&str) {
+	let path = Path::new(filename);
 	let display = path.display();
 
 	let mut file = match File::create(&path) {
@@ -172,14 +181,40 @@ fn save_svf_file(datas: Vec<String>) {
 			Ok(_) => {},
 		}
 	}
+}
+
+pub fn generate_svg_test(arcs: Vec<Arc>, canvas: Vec<Arc>, image_url: &str, _logo_url: &str, color: &str) {
+	let mut svg: Vec<String> = Vec::new();
 	
+
+	svg.push(format!("<svg width=\"{0}px\" height=\"{0}px\" viewBox=\"0 0 {0} {0}\" viewport-fill=\"red\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n", IMAGE_SIZE));
+	svg.push(format!("\t<g id=\"first_line\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">\n"));
+	
+	svg.push(svg_avatar(image_url).to_string());
+	
+	let center = SvgParam::from_float(IMAGE_SIZE / 2.0);
+	let offset = IMAGE_SIZE / 2.0 - CIRCLE_RAY + CIRCLE_PADDING * 2.0;
+	let left_offset = SvgParam::from_float(offset);
+	let rifght_offset = SvgParam::from_float(IMAGE_SIZE - offset);
+
+	svg.push(svg_anchor(&SvgParam::new(color), &center, &left_offset).to_string());
+	svg.push(svg_anchor(&SvgParam::new(color), &center, &rifght_offset).to_string());
+	svg.push(svg_anchor(&SvgParam::new(color), &left_offset, &center).to_string());
+	svg.push(svg_anchor(&SvgParam::new(color), &rifght_offset, &center).to_string());
+
+	svg.push(generate_svg_arcs(arcs, color).to_string());
+	svg.push(generate_svg_arcs(canvas, "#80FFFFFF").to_string());
+
+	svg.push("\t</g>\n".to_string());
+	svg.push("</svg>".to_string());
+
+	save_svf_file(svg, DATA_TEST_FILE);
 }
 
 pub fn generate_svg(arcs: Vec<Arc>, image_url: &str, _logo_url: &str, color: &str) {
 
 	let mut svg: Vec<String> = Vec::new();
-	let color = SvgParam::new(color);
-	let stroke_width = SvgParam::from_int(STROKE_WIDTH);
+	
 
 	svg.push(format!("<svg width=\"{0}px\" height=\"{0}px\" viewBox=\"0 0 {0} {0}\" viewport-fill=\"red\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n", IMAGE_SIZE));
 	svg.push(format!("\t<g id=\"first_line\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">\n"));
@@ -190,21 +225,32 @@ pub fn generate_svg(arcs: Vec<Arc>, image_url: &str, _logo_url: &str, color: &st
 	let offset = IMAGE_SIZE / 2.0 - CIRCLE_RAY + CIRCLE_PADDING * 2.0;
 	let left_offset = SvgParam::from_float(offset);
 	let rifght_offset = SvgParam::from_float(IMAGE_SIZE - offset);
+
+	svg.push(svg_anchor(&SvgParam::new(color), &center, &left_offset).to_string());
+	svg.push(svg_anchor(&SvgParam::new(color), &center, &rifght_offset).to_string());
+	svg.push(svg_anchor(&SvgParam::new(color), &left_offset, &center).to_string());
+	svg.push(svg_anchor(&SvgParam::new(color), &rifght_offset, &center).to_string());
 	
-	svg.push(svg_anchor(&color, &center, &left_offset).to_string());
-	svg.push(svg_anchor(&color, &center, &rifght_offset).to_string());
-	svg.push(svg_anchor(&color, &left_offset, &center).to_string());
-	svg.push(svg_anchor(&color, &rifght_offset, &center).to_string());
+	svg.push(generate_svg_arcs(arcs, color).to_string());
+
+	svg.push("\t</g>\n".to_string());
+	svg.push("</svg>".to_string());
+
+	save_svf_file(svg, DATA_FILE);
+}
+
+fn generate_svg_arcs(arcs: Vec<Arc>, color: &str) -> SvgGroup {
+	let mut svg = SvgGroup::new();
+
+	let color = SvgParam::new(color);
+	let stroke_width = SvgParam::from_int(STROKE_WIDTH);
 
 	svg.push(svg_arcs(&color, &stroke_width, &(arcs.clone().into_iter().filter(|arc| arc.level == 0).collect())).to_string());
 	svg.push(svg_arcs(&color, &stroke_width, &(arcs.clone().into_iter().filter(|arc| arc.level == 1).collect())).to_string());
 	svg.push(svg_arcs(&color, &stroke_width, &(arcs.clone().into_iter().filter(|arc| arc.level == 2).collect())).to_string());
 	svg.push(svg_arcs(&color, &stroke_width, &(arcs.clone().into_iter().filter(|arc| arc.level == 3).collect())).to_string());
 
-	svg.push("\t</g>\n".to_string());
-	svg.push("</svg>".to_string());
-
-	save_svf_file(svg);
+	svg
 }
 
 fn svg_anchor(color: &SvgParam, cx: &SvgParam, cy: &SvgParam) -> SvgGroup {

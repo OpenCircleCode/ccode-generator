@@ -45,7 +45,11 @@ fn main() {
 
 	let coded_string = encoder::code(&url);
 	let arcs: Vec<svg::Arc> = svg::calculate_arcs(coded_string);
-	svg::generate_svg(arcs, &avatar, &logo, &color);
+
+	let canvas: Vec<svg::Arc>  =  svg::generate_canvas();
+
+	svg::generate_svg(arcs.clone(), &avatar, &logo, &color);
+	svg::generate_svg_test(arcs.clone(), canvas, &avatar, &logo, &color);
 
 	downloader::image("http://avatars2.githubusercontent.com/u/33703450?s=200&v=4".to_owned());
 
