@@ -34,12 +34,15 @@ Image size : 400px
 
 Number of circle : 4
 
-Number of point by circle : (farest to nearest from the center)
+Number of point by circle :
 
-	- 1 : 36
-	- 2 : 36
-	- 3 : 24
-	- 4 : 36
+	- P36 = 36
+	- P40 = 40
+	- P45 = 45
+	- P60 = 60
+	- P72 = 72
+	- P90 = 90
+	- P120 = 120
 
 Circle margin : 16px
 
@@ -50,7 +53,7 @@ Circle ray : (farest to nearest from the center)
 	- 3 : 148px
 	- 4 : 132px
 
-Stroke width : 6px
+Stroke width : 7px
 
 Anchors : 4
 
@@ -69,10 +72,6 @@ Avatar image ray: 116 px
 
 Start reading point : East on circle 1
 
-String encoding : ISO_8859_1 (Latin-1)
-
-String hash : md5
-
 String max length : 255 chars
 
 ## Example
@@ -81,9 +80,7 @@ String max length : 255 chars
 ./ccode "http://github.com/qdequele" "https://avatars0.githubusercontent.com/u/6064892?s=460&v=4" "https://avatars2.githubusercontent.com/u/33703450?s=200&v=4" "#0084ff"
 ```
 
-md5 : d668cf0fdbf02d85a08ce858603c66ae
-
-binary : 0110010000110110001101100011100001100011011001100011000001100110011001000110001001100110001100000011001001100100001110000011010101100001001100000011100001100011011001010011100000110101001110000011011000110000001100110110001100110110001101100110000101100101
+binary : 0110100001110100011101000111000000111010001011110010111101100111011010010111010001101000011101010110001000101110011000110110111101101101001011110111000101100100011001010111000101110101011001010110110001100101
 
 ## Dependances
 
