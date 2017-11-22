@@ -5,7 +5,7 @@
 */
 
 use super::math;
-use super::svg::{NB_POINTS, ANCHOR_EXT};
+use super::svg::{ANCHOR_EXT, SPointNumber};
 
 #[derive(Debug, Clone, Copy)]
 pub struct Arc {
@@ -24,15 +24,15 @@ pub fn describe_arc(x: f64, y: f64, radius: f64, start_angle: f64, end_angle:f64
 }
 
 
-pub fn calculate_arcs(code: &[u32]) -> Vec<Arc> {
+pub fn calculate_arcs(code: &[u32], nb_points: &SPointNumber) -> Vec<Arc> {
     let mut arcs: Vec<Arc> = Vec::new();
 
     let mut start: u32 = 0;
     let mut len:u32 = 0;
     let mut level:u32 = 0;
 
-    let nb_points_for_anchor = (ANCHOR_EXT + 1_u32) / (360_u32 / NB_POINTS);
-    let anchor_pos = NB_POINTS / 4;
+    let nb_points_for_anchor = (ANCHOR_EXT + 1_u32) / (360_u32 / nb_points.num);
+    let anchor_pos = nb_points.num / 4;
 
     for c in code {
         let index = start + if len == 0 { 0 } else { len - 1 };
@@ -42,7 +42,7 @@ pub fn calculate_arcs(code: &[u32]) -> Vec<Arc> {
             }
             start += len + nb_points_for_anchor * 2;
             len = 0;
-        } else if index >= NB_POINTS {
+        } else if index >= nb_points.num {
             if len != 0 {
                 arcs.push(Arc{ start: start, len: len, level: level });
             }

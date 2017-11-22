@@ -44,5 +44,5 @@ fn main() {
         color = arg4;
     }
 
-    circle_code::get_circle(&url, &avatar, &logo, &color)
+    circle_code::get_circle(&url, &avatar, &logo, &color, circle_code::PointNumber::P72)
 }
