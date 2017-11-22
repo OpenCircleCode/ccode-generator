@@ -1,3 +1,8 @@
+/*
+* Project: circle-code
+* File: circle_code/downloader.rs
+* Author: Quentin de Quelen (quentin@dequelen.me)
+*/
 
 extern crate reqwest;
 extern crate base64;

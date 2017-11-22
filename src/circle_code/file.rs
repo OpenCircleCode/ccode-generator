@@ -1,3 +1,9 @@
+/*
+* Project: circle-code
+* File: circle_code/file.rs
+* Author: Quentin de Quelen (quentin@dequelen.me)
+*/
+
 use std::fs::File;
 use std::error::Error;
 use std::path::Path;

@@ -1,6 +1,6 @@
 /*
 * Project: circle-code
-* File: src/hash.rs
+* File: circle_code/hash.rs
 * Author: Quentin de Quelen (quentin@dequelen.me)
 */
 
@@ -12,7 +12,7 @@ pub fn get_hash(text: &str) -> Vec<u32> {
 
     println!("text {}", text);
 
-    let md5_text = format!("{:x}", md5::compute(text.as_bytes()));
+    let md5_text = text;//format!("{:x}", md5::compute(text.as_bytes()));
 
     println!("md5 : {}", md5_text);
 

@@ -1,6 +1,11 @@
+/*
+* Project: circle-code
+* File: circle_code/consructor.rs
+* Author: Quentin de Quelen (quentin@dequelen.me)
+*/
 
 use super::math;
-use super::svg::{NB_POINTS};
+use super::svg::{NB_POINTS, ANCHOR_EXT};
 
 #[derive(Debug, Clone, Copy)]
 pub struct Arc {
@@ -26,23 +31,30 @@ pub fn calculate_arcs(code: &[u32]) -> Vec<Arc> {
     let mut len:u32 = 0;
     let mut level:u32 = 0;
 
+    let nb_points_for_anchor = (ANCHOR_EXT + 1_u32) / (360_u32 / NB_POINTS);
+    let anchor_pos = NB_POINTS / 4;
+
     for c in code {
-        if start + len >= NB_POINTS {
+        let index = start + if len == 0 { 0 } else { len - 1 };
+        if level == 2 && index % anchor_pos >= anchor_pos - nb_points_for_anchor {
             if len != 0 {
                 arcs.push(Arc{ start: start, len: len, level: level });
             }
-            start = 0;
+            start += len + nb_points_for_anchor * 2;
+            len = 0;
+        } else if index >= NB_POINTS {
+            if len != 0 {
+                arcs.push(Arc{ start: start, len: len, level: level });
+            }
             len = 0;
             level += 1;
-        }
-        if level == 2 && (start + len - 1) % 9 == (NB_POINTS / 4) - 1 {
+            start = if level == 2 {nb_points_for_anchor} else {0};
+        } else if *c == 0 {
             if len != 0 {
                 arcs.push(Arc{ start: start, len: len, level: level });
+                start += len;
+                len = 0;
             }
-            start += len + 2;
-            len = 0;
-        }
-        if *c == 0 {
             start += 1;
         } else if *c == 1 {
             len += 1;

@@ -1,6 +1,6 @@
 /*
  * Project: circle-code
- * File: src/math.rs
+ * File: circle_code/math.rs
  * Author: Quentin de Quelen (quentin@dequelen.me)
  */
 

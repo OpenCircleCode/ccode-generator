@@ -1,3 +1,8 @@
+/*
+* Project: circle-code
+* File: circle_code/mod.rs
+* Author: Quentin de Quelen (quentin@dequelen.me)
+*/
 
 mod hash;
 mod svg;

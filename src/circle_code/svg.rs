@@ -1,6 +1,6 @@
 /*
 * Project: circle-code
-* File: src/svg.rs
+* File: circle_code/svg.rs
 * Author: Quentin de Quelen (quentin@dequelen.me)
 */
 
@@ -16,11 +16,14 @@ use std::fmt;
 
 use self::constructor::{Arc, describe_arc};
 
-pub static NB_POINTS	: u32 = 72;
+pub static NB_POINTS	: u32 = 130;
+pub static NB_CIRLE	    : u32 = 4;
 static IMAGE_SIZE		: f64 = 400.0;
 static CIRCLE_RAY		: f64 = 180.0;
-static STROKE_WIDTH		: u64 = 6;
+static STROKE_WIDTH		: u64 = 7;
 static ANCHOR_BORDER	: u64 = 4;
+pub static ANCHOR_EXT	: u32 = 8;
+static ANCHOR_IN	    : u64 = 1;
 static CIRCLE_PADDING	: f64 = 16.0;
 
 #[derive(Debug, Default)]
@@ -78,10 +81,7 @@ pub fn generate_canvas() -> Vec<Arc> {
     let mut arcs: Vec<Arc> = Vec::new();
 
     for level in 0..4 {
-        for start in 0..36 {
-            if level == 2 && (start == 0 || start % 9 == 0) {
-                break
-            }
+        for start in 0..72 {
             arcs.push(Arc{ start: start, len: 0, level: level })
         }
     }
@@ -150,23 +150,18 @@ fn generate_svg_arcs(arcs: &[Arc], color: &str) -> SvgGroup {
     let color = SvgParam::new(color);
     let stroke_width = SvgParam::from_int(STROKE_WIDTH);
 
-    let arc_lvl_0: Vec<Arc> = Vec::from(arcs).clone().into_iter().filter(|arc| arc.level == 0).collect();
-    let arc_lvl_1: Vec<Arc> = Vec::from(arcs).clone().into_iter().filter(|arc| arc.level == 1).collect();
-    let arc_lvl_2: Vec<Arc> = Vec::from(arcs).clone().into_iter().filter(|arc| arc.level == 2).collect();
-    let arc_lvl_3: Vec<Arc> = Vec::from(arcs).clone().into_iter().filter(|arc| arc.level == 3).collect();
-
-    svg.push(svg_arcs(&color, &stroke_width, &arc_lvl_0).to_string());
-    svg.push(svg_arcs(&color, &stroke_width, &arc_lvl_1).to_string());
-    svg.push(svg_arcs(&color, &stroke_width, &arc_lvl_2).to_string());
-    svg.push(svg_arcs(&color, &stroke_width, &arc_lvl_3).to_string());
+    for i in 0..NB_CIRLE {
+        let arc: Vec<Arc> = Vec::from(arcs).clone().into_iter().filter(|arc| arc.level == i).collect();
+        svg.push(svg_arcs(&color, &stroke_width, &arc).to_string());
+    }
 
     svg
 }
 
 fn svg_anchor(color: &SvgParam, cx: &SvgParam, cy: &SvgParam) -> SvgGroup {
 
-    let external_ray = SvgParam::from_int(8);
-    let internal_ray = SvgParam::from_int(1);
+    let external_ray = SvgParam::from_int(ANCHOR_EXT as u64);
+    let internal_ray = SvgParam::from_int(ANCHOR_IN);
     let stroke_width = SvgParam::from_int(ANCHOR_BORDER);
 
     let mut anchor = SvgGroup::new();
@@ -192,10 +187,10 @@ fn svg_anchor(color: &SvgParam, cx: &SvgParam, cy: &SvgParam) -> SvgGroup {
 fn svg_arcs(color: &SvgParam, stroke_width: &SvgParam, arcs: &[Arc]) -> SvgGroup {
     let mut svg_arcs = SvgGroup::new();
     
-    let angle = 360 / NB_POINTS;
+    let angle = 360_f64 / f64::from(NB_POINTS);
 
     for arc in arcs.to_owned() {
-        let d = SvgParam::new(&describe_arc((IMAGE_SIZE / 2.0), (IMAGE_SIZE / 2.0), CIRCLE_RAY - (CIRCLE_PADDING * f64::from(arc.level)), f64::from(arc.start * angle), f64::from((arc.start + arc.len) * angle)));
+        let d = SvgParam::new(&describe_arc((IMAGE_SIZE / 2.0), (IMAGE_SIZE / 2.0), CIRCLE_RAY - (CIRCLE_PADDING * f64::from(arc.level)), f64::from(arc.start) * angle, ((arc.start + arc.len) as f64 - 1_f64) * angle));
         let path = format!("\t<path stroke-linecap=\"round\" fill=\"none\" stroke={color} stroke-width={stroke_width} d={d}></path>", d = d, color = color, stroke_width = stroke_width);
         svg_arcs.push(path.clone());
     }
