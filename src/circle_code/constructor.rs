@@ -63,3 +63,14 @@ pub fn calculate_arcs(code: &[u32], nb_points: &SPointNumber) -> Vec<Arc> {
 
     arcs
 }
+
+
+#[test]
+fn test_describe_arc_1() {
+    assert!(describe_arc(150_f64, 150_f64, 120_f64, 0_f64, 10_f64) == "M 268.176930361465 170.83778132003164 A 120 120 0 0 0 270 150");
+}
+
+#[test]
+fn test_describe_arc_2() {
+    assert!(describe_arc(150_f64, 150_f64, 120_f64, 90_f64, 90_f64) == "M 150 270 A 120 120 0 0 0 150 270");
+}

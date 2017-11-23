@@ -4,7 +4,7 @@
 * Author: Quentin de Quelen (quentin@dequelen.me)
 */
 
-mod hash;
+mod encoder;
 mod svg;
 mod downloader;
 mod math;
@@ -17,11 +17,11 @@ pub use self::svg::{PointNumber, SPointNumber};
 static DATA_FILE          : &'static str = "sample/image.svg";
 static DATA_TEST_FILE     : &'static str = "sample/image_test.svg";
 
-pub fn get_circle(url: &str, avatar: &str, logo: &str, color: &str, number_of_points: PointNumber) {
+pub fn get_circle(url: &str, avatar: &str, logo: &str, color: &str, number_of_points: &PointNumber) {
 
-    let hashed_string = hash::get_hash(url);
+    let hashed_string = encoder::get_code(url);
 
-    let nb_points = SPointNumber::new(&number_of_points);
+    let nb_points = SPointNumber::new(number_of_points);
 
     let arcs: Vec<Arc> = calculate_arcs(&hashed_string, &nb_points);
     let canvas: Vec<Arc>  =  svg::generate_canvas();

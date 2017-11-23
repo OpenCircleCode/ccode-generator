@@ -13,7 +13,6 @@ mod circle_code;
 
 use std::env;
 
-
 fn main() {
 
     let args: Vec<String> = env::args().collect();
@@ -44,5 +43,5 @@ fn main() {
         color = arg4;
     }
 
-    circle_code::get_circle(&url, &avatar, &logo, &color, circle_code::PointNumber::P60)
+    circle_code::get_circle(&url, &avatar, &logo, &color, &circle_code::PointNumber::P60)
 }
