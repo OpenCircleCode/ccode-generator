@@ -4,8 +4,8 @@
 * Author: Quentin de Quelen (quentin@dequelen.me)
 */
 
-// #![feature(plugin)]
-// #![plugin(clippy)]
+#![feature(plugin)]
+#![plugin(clippy)]
 
 extern crate urlencoding;
 
