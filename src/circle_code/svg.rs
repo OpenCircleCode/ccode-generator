@@ -16,9 +16,9 @@ pub static NB_CIRLE     : u32 = 4;
 static IMAGE_SIZE       : f64 = 400.0;
 static CIRCLE_RAY       : f64 = 180.0;
 static STROKE_WIDTH     : u64 = 7;
-static ANCHOR_BORDER    : u64 = 4;
+pub static ANCHOR_BORDER: u32 = 4;
 pub static ANCHOR_EXT   : u32 = 8;
-static ANCHOR_IN        : u64 = 1;
+static ANCHOR_IN        : u64 = 2;
 static CIRCLE_PADDING   : f64 = 16.0;
 
 #[derive(Debug)]
@@ -30,19 +30,20 @@ pub enum PointNumber {
 #[derive(Debug, Default)]
 pub struct SPointNumber {
     pub num: u32,
-    pub anchor: (u32, u32, u32, u32)
+    pub anchor: (u32, u32, u32, u32),
+    pub avoid: Vec<u32>
 }
 
 impl SPointNumber {
     pub fn new(point: &PointNumber) -> SPointNumber {
         match *point {
-            PointNumber::P36 => SPointNumber{ num: 36, anchor: (1, 1, 1, 1) },
-            PointNumber::P40 => SPointNumber{ num: 40, anchor: (1, 1, 1, 0) },
-            PointNumber::P45 => SPointNumber{ num: 45, anchor: (1, 1, 0, 1) },
-            PointNumber::P60 => SPointNumber{ num: 60, anchor: (1, 1, 0, 0) },
-            PointNumber::P72 => SPointNumber{ num: 72, anchor: (1, 0, 1, 1) },
-            PointNumber::P90 => SPointNumber{ num: 90, anchor: (1, 0, 1, 0) },
-            PointNumber::P120 => SPointNumber{ num: 120, anchor: (1, 0, 0, 1) }
+            PointNumber::P36 => SPointNumber{ num: 36, anchor: (1, 1, 1, 1), avoid: vec![0, 9, 18, 27] },
+            PointNumber::P40 => SPointNumber{ num: 40, anchor: (1, 1, 1, 0), avoid: vec![0, 9, 18, 27] },
+            PointNumber::P45 => SPointNumber{ num: 45, anchor: (1, 1, 0, 1), avoid: vec![0, 9, 18, 27] },
+            PointNumber::P60 => SPointNumber{ num: 60, anchor: (1, 1, 0, 0), avoid: vec![0, 9, 18, 27] },
+            PointNumber::P72 => SPointNumber{ num: 72, anchor: (1, 0, 1, 1), avoid: vec![0, 9, 18, 27] },
+            PointNumber::P90 => SPointNumber{ num: 90, anchor: (1, 0, 1, 0), avoid: vec![0, 9, 18, 27] },
+            PointNumber::P120 => SPointNumber{ num: 120, anchor: (1, 0, 0, 1), avoid: vec![0, 9, 18, 27] }
         }
     }
 }
@@ -66,6 +67,10 @@ impl SvgParam {
     }
 
     fn from_int(x: u64) -> SvgParam {
+        SvgParam (x.to_string())
+    }
+
+    fn from_u32(x: u32) -> SvgParam {
         SvgParam (x.to_string())
     }
 }
@@ -96,46 +101,6 @@ impl SvgGroup {
     fn push(&mut self, s: String) {
         self.0.push(s);
     }
-}
-
-pub fn generate_canvas() -> Vec<Arc> {
-    let mut arcs: Vec<Arc> = Vec::new();
-
-    for level in 0..4 {
-        for start in 0..72 {
-            arcs.push(Arc{ start: start, len: 0, level: level })
-        }
-    }
-
-    arcs
-}
-
-pub fn generate_svg_test(arcs: &[Arc], canvas: &[Arc], image_url: &str, _logo_url: &str, color: &str, nb_points: &SPointNumber) -> Vec<String> {
-
-    let mut svg: Vec<String> = Vec::new();
-
-    svg.push(format!("<svg width=\"{0}px\" height=\"{0}px\" viewBox=\"0 0 {0} {0}\" viewport-fill=\"red\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n", IMAGE_SIZE));
-    svg.push("\t<g id=\"first_line\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">\n".to_owned());
-
-    svg.push(svg_avatar(image_url).to_string());
-
-    let center = SvgParam::from_float(IMAGE_SIZE / 2.0);
-    let offset = IMAGE_SIZE / 2.0 - CIRCLE_RAY + CIRCLE_PADDING * 2.0;
-    let left_offset = SvgParam::from_float(offset);
-    let rifght_offset = SvgParam::from_float(IMAGE_SIZE - offset);
-
-    svg.push(svg_anchor(&SvgParam::new(color), &center, &left_offset, nb_points.anchor.2).to_string());
-    svg.push(svg_anchor(&SvgParam::new(color), &center, &rifght_offset, nb_points.anchor.0).to_string());
-    svg.push(svg_anchor(&SvgParam::new(color), &left_offset, &center, nb_points.anchor.1).to_string());
-    svg.push(svg_anchor(&SvgParam::new(color), &rifght_offset, &center, nb_points.anchor.3).to_string());
-
-    svg.push(generate_svg_arcs(arcs, color, nb_points).to_string());
-    svg.push(generate_svg_arcs(canvas, "#80FFFFFF", nb_points).to_string());
-
-    svg.push("\t</g>\n".to_string());
-    svg.push("</svg>".to_string());
-
-    svg
 }
 
 pub fn generate_svg(arcs: &[Arc], image_url: &str, _logo_url: &str, color: &str, nb_points: &SPointNumber) -> Vec<String> {
@@ -183,7 +148,7 @@ fn svg_anchor(color: &SvgParam, cx: &SvgParam, cy: &SvgParam, plain: u32) -> Svg
 
     let external_ray = SvgParam::from_int(u64::from(ANCHOR_EXT));
     let internal_ray = SvgParam::from_int(ANCHOR_IN);
-    let stroke_width = SvgParam::from_int(ANCHOR_BORDER);
+    let stroke_width = SvgParam::from_u32(ANCHOR_BORDER);
 
     let mut anchor = SvgGroup::new();
 

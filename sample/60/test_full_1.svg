@@ -8,7 +8,6 @@
 	</g>
 	<g>
 		<circle stroke="#0084ff" stroke-width="4" cx="200" cy="52" r="8"></circle>
-		<circle stroke="#0084ff" stroke-width="4" cx="200" cy="52" r="2"></circle>
 	</g>
 	<g>
 		<circle stroke="#0084ff" stroke-width="4" cx="200" cy="348" r="8"></circle>
@@ -16,7 +15,6 @@
 	</g>
 	<g>
 		<circle stroke="#0084ff" stroke-width="4" cx="52" cy="200" r="8"></circle>
-		<circle stroke="#0084ff" stroke-width="4" cx="52" cy="200" r="2"></circle>
 	</g>
 	<g>
 		<circle stroke="#0084ff" stroke-width="4" cx="348" cy="200" r="8"></circle>
@@ -24,12 +22,16 @@
 	</g>
 	<g>
 		<g>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 379.0139411662892 181.18487661182238 A 180 180 0 1 0 380 200"></path>
 	</g>
 
 		<g>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 363.10159084039685 182.85733202410483 A 164 164 0 1 0 364 200"></path>
 	</g>
 
 		<g>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 299.031329741111 309.98543417065434 A 148 148 0 0 0 347.18924051450443 215.4702125636127"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 169.2290697589716 344.76584490860324 A 148 148 0 0 0 260.1970231752184 335.2047277311049"></path>
 	</g>
 
 		<g>

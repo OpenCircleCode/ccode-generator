@@ -5,7 +5,7 @@
 */
 
 use super::math;
-use super::svg::{ANCHOR_EXT, SPointNumber};
+use super::svg::{ANCHOR_EXT, ANCHOR_BORDER, SPointNumber};
 
 #[derive(Debug, Clone, Copy)]
 pub struct Arc {
@@ -23,47 +23,64 @@ pub fn describe_arc(x: f64, y: f64, radius: f64, start_angle: f64, end_angle:f64
     format!("M {} {} A {} {} 0 {} 0 {} {}", start.x, start.y, radius, radius, large_arc_flag, end.x, end.y)
 }
 
-
-pub fn calculate_arcs(code: &[u32], nb_points: &SPointNumber) -> Vec<Arc> {
+#[allow(dead_code)]
+pub fn test_arc(nb_points: &SPointNumber) -> Vec<Arc> {
     let mut arcs: Vec<Arc> = Vec::new();
 
-    let mut start: u32 = 0;
-    let mut len:u32 = 0;
-    let mut level:u32 = 0;
+    for i in 0..4 {
+        for j in 0..nb_points.num {
+            if i == 2 && nb_points.avoid.contains(&j) {
 
-    let nb_points_for_anchor = (ANCHOR_EXT + 1_u32) / (360_u32 / nb_points.num);
-    let anchor_pos = nb_points.num / 4;
-
-    for c in code {
-        let index = start + if len == 0 { 0 } else { len - 1 };
-        if level == 2 && index % anchor_pos >= anchor_pos - nb_points_for_anchor {
-            if len != 0 {
-                arcs.push(Arc{ start: start, len: len, level: level });
+            } else {
+                let arc = Arc{ start: j, len: 1, level: i };
+                arcs.push(arc);
             }
-            start += len + nb_points_for_anchor * 2;
-            len = 0;
-        } else if index >= nb_points.num {
-            if len != 0 {
-                arcs.push(Arc{ start: start, len: len, level: level });
-            }
-            len = 0;
-            level += 1;
-            start = if level == 2 {nb_points_for_anchor} else {0};
-        } else if *c == 0 {
-            if len != 0 {
-                arcs.push(Arc{ start: start, len: len, level: level });
-                start += len;
-                len = 0;
-            }
-            start += 1;
-        } else if *c == 1 {
-            len += 1;
         }
     }
 
     arcs
 }
 
+
+pub fn calculate_arcs(code: &[u32], nb_points: &SPointNumber) -> Vec<Arc> {
+    let mut arcs: Vec<Arc> = Vec::new();
+
+    let mut map: Vec<Vec<u32>> = Vec::new();
+    let mut delta = 0;
+
+    for i_line in 0..4 {
+        let mut row: Vec<u32> = Vec::new();
+
+        for i_case in 0..nb_points.num {
+            let index = ((i_line * nb_points.num ) + i_case) as usize;
+
+            if i_line == 2 && nb_points.avoid.contains(&(i_case as u32)) {
+                row.push(0);
+                delta += 1;
+                continue;
+            }
+
+            if index > code.len() - 1 { break }
+
+            row.push(code[index - delta]);
+        }
+
+        map.push(row);
+    }
+
+    println!("{:?}", map[2]);
+
+    let mut start: u32 = 0;
+    let mut len:u32 = 0;
+    let mut level:u32 = 0;
+
+    // let arc = Arc{ start: start, len: len, level: level };
+    // arcs.push(arc);
+
+    let pt_in_anchor = (ANCHOR_EXT + ANCHOR_BORDER) / (360 / nb_points.num);
+
+    arcs
+}
 
 #[test]
 fn test_describe_arc_1() {
