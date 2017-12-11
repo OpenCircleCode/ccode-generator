@@ -189,7 +189,7 @@ fn svg_arcs(color: &SvgParam, stroke_width: &SvgParam, arcs: &[Arc], nb_points: 
 fn svg_avatar(image_url: &str) -> SvgGroup {
     let mut svg_avatar = SvgGroup::new();
 
-    let url_image = SvgParam::new(&format!("data:image/svg+xml;base64,{}", downloader::image(image_url)));
+    let url_image = "";//SvgParam::new(&format!("data:image/svg+xml;base64,{}", downloader::image(image_url)));
     let c = SvgParam::from_float(IMAGE_SIZE / 2.0);
 
     let clip_size = SvgParam::from_float(CIRCLE_RAY - (4.0 * CIRCLE_PADDING));

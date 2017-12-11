@@ -5,7 +5,7 @@
 */
 
 use super::math;
-use super::svg::{ANCHOR_EXT, ANCHOR_BORDER, SPointNumber};
+use super::svg::{SPointNumber};
 
 #[derive(Debug, Clone, Copy)]
 pub struct Arc {
@@ -41,10 +41,7 @@ pub fn test_arc(nb_points: &SPointNumber) -> Vec<Arc> {
     arcs
 }
 
-
-pub fn calculate_arcs(code: &[u32], nb_points: &SPointNumber) -> Vec<Arc> {
-    let mut arcs: Vec<Arc> = Vec::new();
-
+fn cut_in_lines(code: &[u32], nb_points: &SPointNumber) -> Vec<Vec<u32>> {
     let mut map: Vec<Vec<u32>> = Vec::new();
     let mut delta = 0;
 
@@ -68,18 +65,54 @@ pub fn calculate_arcs(code: &[u32], nb_points: &SPointNumber) -> Vec<Arc> {
         map.push(row);
     }
 
-    println!("{:?}", map[2]);
+    map
+}
+
+fn generate_segments(map: Vec<Vec<u32>>) -> Vec<Arc> {
+    let mut arcs: Vec<Arc> = Vec::new();
+
+
+    let mut level:u32 = 0;
+
+    for line in map {
+        let new_arcs = generate_segment_line(line, level);
+        for arc in new_arcs {
+            arcs.push(arc);
+        }
+        level += 1;
+    }
+
+    arcs
+}
+
+fn generate_segment_line(line: Vec<u32>, level: u32) -> Vec<Arc> {
+    let mut arcs: Vec<Arc> = Vec::new();
 
     let mut start: u32 = 0;
     let mut len:u32 = 0;
-    let mut level:u32 = 0;
 
-    // let arc = Arc{ start: start, len: len, level: level };
-    // arcs.push(arc);
-
-    let pt_in_anchor = (ANCHOR_EXT + ANCHOR_BORDER) / (360 / nb_points.num);
+    for bit in line {
+        if bit == 1 {
+            len += 1;
+        } else {
+            if len > 0 {
+                arcs.push(Arc{ start: start, len: len, level: level });
+            }
+            start += len + 1;
+            len = 0;
+        }
+    }
+    if len > 0 {
+        arcs.push(Arc{ start: start, len: len, level: level });
+    }
 
     arcs
+}
+
+
+pub fn calculate_arcs(code: &[u32], nb_points: &SPointNumber) -> Vec<Arc> {
+    let map = cut_in_lines(code, nb_points);
+    generate_segments(map)
 }
 
 #[test]
