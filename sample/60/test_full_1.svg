@@ -31,10 +31,13 @@
 
 		<g>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 299.031329741111 309.98543417065434 A 148 148 0 0 0 347.18924051450443 215.4702125636127"></path>
-		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 169.2290697589716 344.76584490860324 A 148 148 0 0 0 260.1970231752184 335.2047277311049"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 169.2290697589716 344.76584490860324 A 148 148 0 0 0 274 328.1717597600969"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 64.79527226889508 260.1970231752185 A 148 148 0 0 0 139.80297682478155 335.2047277311049"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 347.18924051450443 184.5297874363873 A 148 148 0 1 0 55.23415509139676 230.77093024102837"></path>
 	</g>
 
 		<g>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 331.2768901886121 186.20224284866975 A 132 132 0 1 0 332 200"></path>
 	</g>
 
 	</g>

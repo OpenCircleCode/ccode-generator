@@ -81,6 +81,7 @@
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 368.04447676949627 135.49376908184587 A 180 180 0 0 0 368.04447676949627 135.49376908184587"></path>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 373.86664873203233 153.41257188154628 A 180 180 0 0 0 373.86664873203233 153.41257188154628"></path>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 377.7839013071248 171.8417962927584 A 180 180 0 0 0 377.7839013071248 171.8417962927584"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 379.7533162558233 190.57952787627002 A 180 180 0 0 0 379.7533162558233 190.57952787627002"></path>
 	</g>
 
 		<g>
@@ -95,12 +96,151 @@
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 303.20854413217336 327.4519376789432 A 164 164 0 0 0 303.20854413217336 327.4519376789432"></path>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 289.3208017424644 337.5419731430495 A 164 164 0 0 0 289.3208017424644 337.5419731430495"></path>
 		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 274.45444195728567 346.1250699668923 A 164 164 0 0 0 274.45444195728567 346.1250699668923"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 258.77234372542927 353.1071899455411 A 164 164 0 0 0 258.77234372542927 353.1071899455411"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 242.4463233968134 358.41183551140716 A 164 164 0 0 0 242.4463233968134 358.41183551140716"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 225.65525226659787 361.9808878576026 A 164 164 0 0 0 225.65525226659787 361.9808878576026"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 208.58309682384282 363.77524369975015 A 164 164 0 0 0 208.58309682384282 363.77524369975015"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 191.4169031761572 363.77524369975015 A 164 164 0 0 0 191.4169031761572 363.77524369975015"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 174.34474773340216 361.9808878576026 A 164 164 0 0 0 174.34474773340216 361.9808878576026"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 157.55367660318657 358.41183551140716 A 164 164 0 0 0 157.55367660318657 358.41183551140716"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 141.22765627457076 353.1071899455411 A 164 164 0 0 0 141.22765627457076 353.1071899455411"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 125.54555804271433 346.12506996689234 A 164 164 0 0 0 125.54555804271433 346.12506996689234"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 110.67919825753556 337.5419731430495 A 164 164 0 0 0 110.67919825753556 337.5419731430495"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 96.79145586782668 327.4519376789433 A 164 164 0 0 0 96.79145586782668 327.4519376789433"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 84.03448788540622 315.9655121145938 A 164 164 0 0 0 84.03448788540622 315.9655121145938"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 72.54806232105678 303.2085441321733 A 164 164 0 0 0 72.54806232105678 303.2085441321733"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 62.45802685695048 289.3208017424645 A 164 164 0 0 0 62.45802685695048 289.3208017424645"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 53.87493003310769 274.45444195728567 A 164 164 0 0 0 53.87493003310769 274.45444195728567"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 46.89281005445892 258.7723437254292 A 164 164 0 0 0 46.89281005445892 258.7723437254292"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 41.58816448859281 242.44632339681345 A 164 164 0 0 0 41.58816448859281 242.44632339681345"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 38.01911214239743 225.65525226659787 A 164 164 0 0 0 38.01911214239743 225.65525226659787"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 36.22475630024988 208.5830968238428 A 164 164 0 0 0 36.22475630024988 208.5830968238428"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 36.22475630024988 191.41690317615726 A 164 164 0 0 0 36.22475630024988 191.41690317615726"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 38.019112142397404 174.34474773340216 A 164 164 0 0 0 38.019112142397404 174.34474773340216"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 41.58816448859281 157.5536766031866 A 164 164 0 0 0 41.58816448859281 157.5536766031866"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 46.89281005445892 141.22765627457073 A 164 164 0 0 0 46.89281005445892 141.22765627457073"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 53.87493003310766 125.54555804271435 A 164 164 0 0 0 53.87493003310766 125.54555804271435"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 62.458026856950454 110.67919825753556 A 164 164 0 0 0 62.458026856950454 110.67919825753556"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 72.54806232105679 96.79145586782663 A 164 164 0 0 0 72.54806232105679 96.79145586782663"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 84.03448788540618 84.03448788540622 A 164 164 0 0 0 84.03448788540618 84.03448788540622"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 96.7914558678266 72.54806232105683 A 164 164 0 0 0 96.7914558678266 72.54806232105683"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 110.67919825753557 62.458026856950454 A 164 164 0 0 0 110.67919825753557 62.458026856950454"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 125.5455580427143 53.87493003310769 A 164 164 0 0 0 125.5455580427143 53.87493003310769"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 141.22765627457068 46.89281005445892 A 164 164 0 0 0 141.22765627457068 46.89281005445892"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 157.5536766031866 41.58816448859281 A 164 164 0 0 0 157.5536766031866 41.58816448859281"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 174.3447477334021 38.01911214239743 A 164 164 0 0 0 174.3447477334021 38.01911214239743"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 191.41690317615712 36.22475630024988 A 164 164 0 0 0 191.41690317615712 36.22475630024988"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 208.5830968238428 36.22475630024988 A 164 164 0 0 0 208.5830968238428 36.22475630024988"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 225.65525226659784 38.019112142397404 A 164 164 0 0 0 225.65525226659784 38.019112142397404"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 242.44632339681334 41.58816448859278 A 164 164 0 0 0 242.44632339681334 41.58816448859278"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 258.77234372542927 46.89281005445892 A 164 164 0 0 0 258.77234372542927 46.89281005445892"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 274.45444195728567 53.87493003310766 A 164 164 0 0 0 274.45444195728567 53.87493003310766"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 289.32080174246437 62.458026856950426 A 164 164 0 0 0 289.32080174246437 62.458026856950426"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 303.20854413217336 72.54806232105679 A 164 164 0 0 0 303.20854413217336 72.54806232105679"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 315.96551211459376 84.03448788540618 A 164 164 0 0 0 315.96551211459376 84.03448788540618"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 327.4519376789432 96.7914558678266 A 164 164 0 0 0 327.4519376789432 96.7914558678266"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 337.5419731430495 110.67919825753557 A 164 164 0 0 0 337.5419731430495 110.67919825753557"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 346.1250699668923 125.54555804271429 A 164 164 0 0 0 346.1250699668923 125.54555804271429"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 353.10718994554105 141.22765627457068 A 164 164 0 0 0 353.10718994554105 141.22765627457068"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 358.41183551140716 157.5536766031866 A 164 164 0 0 0 358.41183551140716 157.5536766031866"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 361.98088785760257 174.3447477334021 A 164 164 0 0 0 361.98088785760257 174.3447477334021"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 363.77524369975015 191.41690317615712 A 164 164 0 0 0 363.77524369975015 191.41690317615712"></path>
 	</g>
 
 		<g>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 346.17787440808036 223.15230082595417 A 148 148 0 0 0 346.17787440808036 223.15230082595417"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 342.9570222907821 238.30521867517308 A 148 148 0 0 0 342.9570222907821 238.30521867517308"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 338.1699031215859 253.03845653270443 A 148 148 0 0 0 338.1699031215859 253.03845653270443"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 331.8689655798785 267.1905939614529 A 148 148 0 0 0 331.8689655798785 267.1905939614529"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 324.1232440559228 280.606577182224 A 148 148 0 0 0 324.1232440559228 280.606577182224"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 315.0176022956317 293.13941787537595 A 148 148 0 0 0 315.0176022956317 293.13941787537595"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 304.651803615609 304.651803615609 A 148 148 0 0 0 304.651803615609 304.651803615609"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 293.13941787537595 315.01760229563166 A 148 148 0 0 0 293.13941787537595 315.01760229563166"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 280.606577182224 324.1232440559228 A 148 148 0 0 0 280.606577182224 324.1232440559228"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 267.1905939614529 331.8689655798784 A 148 148 0 0 0 267.1905939614529 331.8689655798784"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 253.03845653270446 338.1699031215859 A 148 148 0 0 0 253.03845653270446 338.1699031215859"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 238.30521867517308 342.9570222907821 A 148 148 0 0 0 238.30521867517308 342.9570222907821"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 223.15230082595417 346.17787440808036 A 148 148 0 0 0 223.15230082595417 346.17787440808036"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 184.52978743638727 347.18924051450443 A 148 148 0 0 0 184.52978743638727 347.18924051450443"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 169.2290697589716 344.76584490860324 A 148 148 0 0 0 169.2290697589716 344.76584490860324"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 154.2654848325078 340.75636441168274 A 148 148 0 0 0 154.2654848325078 340.75636441168274"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 139.80297682478155 335.2047277311049 A 148 148 0 0 0 139.80297682478155 335.2047277311049"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 126.00000000000003 328.17175976009696 A 148 148 0 0 0 126.00000000000003 328.17175976009696"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 113.00778266071399 319.7345151674922 A 148 148 0 0 0 113.00778266071399 319.7345151674922"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 100.96867025888898 309.98543417065434 A 148 148 0 0 0 100.96867025888898 309.98543417065434"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 90.01456582934568 299.03132974111105 A 148 148 0 0 0 90.01456582934568 299.03132974111105"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 80.2654848325078 286.99221733928607 A 148 148 0 0 0 80.2654848325078 286.99221733928607"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 71.82824023990307 274 A 148 148 0 0 0 71.82824023990307 274"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 64.79527226889508 260.1970231752185 A 148 148 0 0 0 64.79527226889508 260.1970231752185"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 59.24363558831729 245.73451516749225 A 148 148 0 0 0 59.24363558831729 245.73451516749225"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 55.23415509139676 230.77093024102837 A 148 148 0 0 0 55.23415509139676 230.77093024102837"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 52.810759485495566 215.47021256361276 A 148 148 0 0 0 52.810759485495566 215.47021256361276"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 53.822125591919615 176.84769917404586 A 148 148 0 0 0 53.822125591919615 176.84769917404586"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 57.042977709217894 161.69478132482692 A 148 148 0 0 0 57.042977709217894 161.69478132482692"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 61.83009687841417 146.96154346729554 A 148 148 0 0 0 61.83009687841417 146.96154346729554"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 68.13103442012155 132.80940603854708 A 148 148 0 0 0 68.13103442012155 132.80940603854708"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 75.87675594407725 119.39342281777598 A 148 148 0 0 0 75.87675594407725 119.39342281777598"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 84.98239770436832 106.86058212462403 A 148 148 0 0 0 84.98239770436832 106.86058212462403"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 95.34819638439095 95.34819638439097 A 148 148 0 0 0 95.34819638439095 95.34819638439097"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 106.860582124624 84.98239770436835 A 148 148 0 0 0 106.860582124624 84.98239770436835"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 119.39342281777601 75.87675594407725 A 148 148 0 0 0 119.39342281777601 75.87675594407725"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 132.80940603854705 68.13103442012158 A 148 148 0 0 0 132.80940603854705 68.13103442012158"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 146.96154346729548 61.83009687841417 A 148 148 0 0 0 146.96154346729548 61.83009687841417"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 161.69478132482695 57.042977709217894 A 148 148 0 0 0 161.69478132482695 57.042977709217894"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 176.8476991740458 53.822125591919615 A 148 148 0 0 0 176.8476991740458 53.822125591919615"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 215.47021256361265 52.81075948549554 A 148 148 0 0 0 215.47021256361265 52.81075948549554"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 230.7709302410284 55.23415509139679 A 148 148 0 0 0 230.7709302410284 55.23415509139679"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 245.7345151674922 59.24363558831726 A 148 148 0 0 0 245.7345151674922 59.24363558831726"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 260.19702317521836 64.79527226889505 A 148 148 0 0 0 260.19702317521836 64.79527226889505"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 274 71.8282402399031 A 148 148 0 0 0 274 71.8282402399031"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 286.99221733928596 80.26548483250777 A 148 148 0 0 0 286.99221733928596 80.26548483250777"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 299.03132974111094 90.01456582934559 A 148 148 0 0 0 299.03132974111094 90.01456582934559"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 309.98543417065434 100.96867025888899 A 148 148 0 0 0 309.98543417065434 100.96867025888899"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 319.7345151674922 113.00778266071396 A 148 148 0 0 0 319.7345151674922 113.00778266071396"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 328.17175976009685 125.99999999999993 A 148 148 0 0 0 328.17175976009685 125.99999999999993"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 335.204727731105 139.80297682478158 A 148 148 0 0 0 335.204727731105 139.80297682478158"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 340.75636441168274 154.26548483250775 A 148 148 0 0 0 340.75636441168274 154.26548483250775"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 344.7658449086032 169.22906975897155 A 148 148 0 0 0 344.7658449086032 169.22906975897155"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 347.18924051450443 184.5297874363873 A 148 148 0 0 0 347.18924051450443 184.5297874363873"></path>
 	</g>
 
 		<g>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 331.8190985876038 206.9083462240686 A 132 132 0 0 0 331.8190985876038 206.9083462240686"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 330.3748609585582 220.64934938531047 A 132 132 0 0 0 330.3748609585582 220.64934938531047"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 327.50220907015705 234.16411395353273 A 132 132 0 0 0 327.50220907015705 234.16411395353273"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 323.2326162976306 247.30456933997965 A 132 132 0 0 0 323.2326162976306 247.30456933997965"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 317.61286119286456 259.92674596562017 A 132 132 0 0 0 317.61286119286456 259.92674596562017"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 310.704514968796 271.8923526219836 A 132 132 0 0 0 310.704514968796 271.8923526219836"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 302.58326691232014 283.07029161857855 A 132 132 0 0 0 302.58326691232014 283.07029161857855"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 293.3380951166243 293.33809511662423 A 132 132 0 0 0 293.3380951166243 293.33809511662423"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 283.07029161857855 302.58326691232014 A 132 132 0 0 0 283.07029161857855 302.58326691232014"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 271.8923526219836 310.704514968796 A 132 132 0 0 0 271.8923526219836 310.704514968796"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 259.92674596562017 317.61286119286456 A 132 132 0 0 0 259.92674596562017 317.61286119286456"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 247.30456933997965 323.2326162976306 A 132 132 0 0 0 247.30456933997965 323.2326162976306"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 234.16411395353273 327.50220907015705 A 132 132 0 0 0 234.16411395353273 327.50220907015705"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 220.64934938531047 330.3748609585582 A 132 132 0 0 0 220.64934938531047 330.3748609585582"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 206.9083462240686 331.8190985876038 A 132 132 0 0 0 206.9083462240686 331.8190985876038"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 193.0916537759314 331.8190985876038 A 132 132 0 0 0 193.0916537759314 331.8190985876038"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 179.35065061468953 330.3748609585582 A 132 132 0 0 0 179.35065061468953 330.3748609585582"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 165.83588604646724 327.50220907015705 A 132 132 0 0 0 165.83588604646724 327.50220907015705"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 152.69543066002035 323.2326162976306 A 132 132 0 0 0 152.69543066002035 323.2326162976306"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 140.07325403437983 317.61286119286456 A 132 132 0 0 0 140.07325403437983 317.61286119286456"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 128.10764737801642 310.704514968796 A 132 132 0 0 0 128.10764737801642 310.704514968796"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 116.92970838142148 302.5832669123202 A 132 132 0 0 0 116.92970838142148 302.5832669123202"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 106.66190488337574 293.3380951166243 A 132 132 0 0 0 106.66190488337574 293.3380951166243"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 97.41673308767984 283.07029161857855 A 132 132 0 0 0 97.41673308767984 283.07029161857855"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 89.29548503120404 271.8923526219836 A 132 132 0 0 0 89.29548503120404 271.8923526219836"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 82.38713880713546 259.92674596562017 A 132 132 0 0 0 82.38713880713546 259.92674596562017"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 76.76738370236937 247.30456933997962 A 132 132 0 0 0 76.76738370236937 247.30456933997962"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 72.49779092984299 234.16411395353276 A 132 132 0 0 0 72.49779092984299 234.16411395353276"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 69.62513904144183 220.6493493853105 A 132 132 0 0 0 69.62513904144183 220.6493493853105"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 68.18090141239625 206.9083462240686 A 132 132 0 0 0 68.18090141239625 206.9083462240686"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 68.18090141239625 193.09165377593146 A 132 132 0 0 0 68.18090141239625 193.09165377593146"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 69.62513904144183 179.35065061468953 A 132 132 0 0 0 69.62513904144183 179.35065061468953"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 72.49779092984298 165.83588604646724 A 132 132 0 0 0 72.49779092984298 165.83588604646724"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 76.76738370236939 152.69543066002035 A 132 132 0 0 0 76.76738370236939 152.69543066002035"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 82.38713880713544 140.07325403437983 A 132 132 0 0 0 82.38713880713544 140.07325403437983"></path>
+		<path stroke-linecap="round" fill="none" stroke="#0084ff" stroke-width="7" d="M 89.29548503120402 128.10764737801642 A 132 132 0 0 0 89.29548503120402 128.10764737801642"></path>
 	</g>
 
 	</g>

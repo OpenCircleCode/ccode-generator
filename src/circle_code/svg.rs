@@ -41,9 +41,9 @@ impl SPointNumber {
             PointNumber::P40 => SPointNumber{ num: 40, anchor: (1, 1, 1, 0), avoid: vec![0, 9, 18, 27] },
             PointNumber::P45 => SPointNumber{ num: 45, anchor: (1, 1, 0, 1), avoid: vec![0, 9, 18, 27] },
             PointNumber::P60 => SPointNumber{ num: 60, anchor: (1, 1, 0, 0), avoid: vec![0, 9, 18, 27] },
-            PointNumber::P72 => SPointNumber{ num: 72, anchor: (1, 0, 1, 1), avoid: vec![0, 9, 18, 27] },
-            PointNumber::P90 => SPointNumber{ num: 90, anchor: (1, 0, 1, 0), avoid: vec![0, 9, 18, 27] },
-            PointNumber::P120 => SPointNumber{ num: 120, anchor: (1, 0, 0, 1), avoid: vec![0, 9, 18, 27] }
+            PointNumber::P72 => SPointNumber{ num: 72, anchor: (1, 0, 1, 1), avoid: vec![0, 1, 17, 18, 19, 35, 36, 37, 53, 54, 55, 71] },
+            PointNumber::P90 => SPointNumber{ num: 90, anchor: (1, 0, 1, 0), avoid: vec![0, 1, 22, 23, 44, 45, 46, 67, 68, 89] },
+            PointNumber::P120 => SPointNumber{ num: 120, anchor: (1, 0, 0, 1), avoid: vec![0, 1, 29, 30, 31, 59, 60, 61, 89, 90, 91, 119] }
         }
     }
 }
@@ -189,7 +189,7 @@ fn svg_arcs(color: &SvgParam, stroke_width: &SvgParam, arcs: &[Arc], nb_points: 
 fn svg_avatar(image_url: &str) -> SvgGroup {
     let mut svg_avatar = SvgGroup::new();
 
-    let url_image = "";//SvgParam::new(&format!("data:image/svg+xml;base64,{}", downloader::image(image_url)));
+    let url_image = SvgParam::new(&format!("data:image/svg+xml;base64,{}", downloader::image(image_url)));
     let c = SvgParam::from_float(IMAGE_SIZE / 2.0);
 
     let clip_size = SvgParam::from_float(CIRCLE_RAY - (4.0 * CIRCLE_PADDING));
